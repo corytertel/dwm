@@ -14,8 +14,8 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const int user_bh            = 0;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "RobotoMono Nerd Font:size=12" };
-static const char dmenufont[]       = "RobotoMono Font:size=12";
+static const char *fonts[]          = { "JetBrains Mono Regular Nerd Font Complete Mono:size=12" };
+static const char dmenufont[]       = "JetBrains Mono Regular Nerd Font Complete Mono:size=12";
 
 // Default colors
 //static const char col_gray1[]       = "#222222";
@@ -32,11 +32,18 @@ static const char dmenufont[]       = "RobotoMono Font:size=12";
 //static const char col_cyan[]        = "#75507b";
 
 // Nord theme colors
-static const char col_gray1[]       = "#2e3440";
+//static const char col_gray1[]       = "#2e3440";
+//static const char col_gray2[]       = "#444444";
+//static const char col_gray3[]       = "#d8dee9";
+//static const char col_gray4[]       = "#2e3440";
+//static const char col_cyan[]        = "#a5abb6";
+
+// Gruvbox colors
+static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#d8dee9";
-static const char col_gray4[]       = "#2e3440";
-static const char col_cyan[]        = "#a5abb6";
+static const char col_gray3[]       = "#ebdbb2";
+static const char col_gray4[]       = "#282828";
+static const char col_cyan[]        = "#cc241d";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -45,7 +52,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", "7", "8", "9" };
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -89,7 +96,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
