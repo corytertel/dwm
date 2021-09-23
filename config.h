@@ -7,15 +7,15 @@ static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%"
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 25;        /* gaps between windows */
+static const unsigned int gappx     = 100;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
 static const int user_bh            = 0;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { "JetBrains Mono Regular Nerd Font Complete Mono:size=12" };
-static const char dmenufont[]       = "JetBrains Mono Regular Nerd Font Complete Mono:size=12";
+static const char *fonts[]          = { "RobotoMono Nerd Font:size=12" };
+static const char dmenufont[]       = "RobotoMono Nerd Font:size=12";
 
 // Default colors
 //static const char col_gray1[]       = "#222222";
@@ -97,6 +97,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *fileexplorercmd[] = { "dolphin", NULL };
 
 #include "movestack.c"
 static Key keys[] = {
@@ -109,6 +110,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_F10,    spawn,          {.v = upvol   } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = fileexplorercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
